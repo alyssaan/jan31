@@ -1,0 +1,33 @@
+<script>
+
+  let button
+  
+  function circle() {
+		const ele = document.createElement('div')
+    ele.style.width = '200px'
+  	ele.style.height = '200px'
+  	ele.style.borderRadius = '50%'
+  	ele.style.backgroundColor = 'blue'
+    ele.style.transition = 'all 500ms'
+  	return ele
+  }
+  
+  function mouseIsDown (e) {
+    button.style.backgroundColor = 'green'
+  }
+  
+  function mouseIsUp (e) {
+    button.style.backgroundColor = 'blue'
+  }
+  
+	function setup () {
+    button = circle()
+    document.body.appendChild(button)
+    
+    button.addEventListener('mousedown', mouseIsDown)
+    button.addEventListener('mouseup', mouseIsUp)
+  }
+  
+  window.addEventListener('load', setup)
+  
+</script>
